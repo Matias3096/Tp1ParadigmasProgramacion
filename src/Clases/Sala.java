@@ -2,11 +2,11 @@ package Clases;
 
 public class Sala {
     private int cupo;
-    private int id;
+    private int idSala;
 
     public Sala(int cupo, int id){
         this.cupo=cupo;
-        this.id = id;
+        this.idSala = id;
 
     }
 

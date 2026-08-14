@@ -21,6 +21,7 @@ public class EventoUniversitario {
         this.costoBase = costoBase;
         this.gratuito = gratuito;
         this.actividad = new Actividad(id, titulo1, cupoMaximo);
+        cantidadEventos++;  //Incrementa el contador de cantidad de eventos
     }
 
 
@@ -65,9 +66,14 @@ public class EventoUniversitario {
         this.titulo= otro.titulo;
         this.costoBase = otro.costoBase;
         this.gratuito = otro.gratuito;
+        cantidadEventos++; //Incrementa la cantidad de eventos
+
     }
     //ver validaciones posibles
     public double calcularCostoEstimado(){
+        if (gratuito){
+            return 0;
+        }
         return costoBase;
     }
 
@@ -76,9 +82,11 @@ public class EventoUniversitario {
     }
 
     public void crearActividad(int id, String titulo, int cupo){
-
+        System.out.println("Actividad creada. \n Id:" + id +
+                ",\n Titulo: "+titulo +
+                ",\n Cupo: " + cupo);
     }
     public void mostrarDatos(){
-        System.out.println("Id numero:" + Id + "tirulo :" + titulo + "" );
+        System.out.println("***DATOS DEL EVENTO***"+"\nId numero:" + Id + "tirulo :" + titulo + "" );
     }
 }
