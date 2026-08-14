@@ -15,6 +15,21 @@ public class App {
         EventoUniversitario eventoCopia3 = new EventoUniversitario(ev3);
 
         // (c)
+        System.out.println("\nEventos Creados");
+        ev1.mostrarDatos();
+        ev2.mostrarDatos();
+        ev3.mostrarDatos();
+
+        System.out.println("\nCopia de eventos");
+        eventoCopia1.mostrarDatos();
+        eventoCopia2.mostrarDatos();
+        eventoCopia3.mostrarDatos();
+
+        //d. Se muestre el contador de eventos con la totalidad de eventos creados
+        //EventoUniversitario.getCantidadEventos();
+        System.out.println("La cantidad de eventos creados es: " + EventoUniversitario.getCantidadEventos());
+
+        //COnsultar si el println lo puedo dejar aca o en el get, que es lo correcto como buena practica?
 
 
     }

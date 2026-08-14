@@ -53,7 +53,8 @@ public class EventoUniversitario {
 
         return gratuito;
     }
-    public static int getCantidadEventos() {
+    public static int getCantidadEventos() { // Consultar si es correcto
+        //System.out.println("\nLa cantidad de eventos creados es: " + cantidadEventos);
         return cantidadEventos;
     }
 
@@ -87,6 +88,6 @@ public class EventoUniversitario {
                 ",\n Cupo: " + cupo);
     }
     public void mostrarDatos(){
-        System.out.println("***DATOS DEL EVENTO***"+"\nId numero:" + Id + "tirulo :" + titulo + "" );
+        System.out.println("\n***DATOS DEL EVENTO***"+"\nId numero:" + Id + "titulo :" + titulo + "" );
     }
 }
