@@ -12,7 +12,7 @@ public class EventoUniversitario {
         cantidadEventos =0;
     }
     //Relaciones
-    public Actividad actividad;
+    public Actividad compone;
     public Sala sala;
 
     public EventoUniversitario(String Id, String titulo, double costoBase, boolean gratuito, int id, String titulo1, int cupoMaximo) {
@@ -20,7 +20,7 @@ public class EventoUniversitario {
         this.titulo = titulo;
         this.costoBase = costoBase;
         this.gratuito = gratuito;
-        this.actividad = new Actividad(id, titulo1, cupoMaximo);
+        this.compone = new Actividad(id, titulo1, cupoMaximo);
         cantidadEventos++;  //Incrementa el contador de cantidad de eventos
     }
 
@@ -78,16 +78,21 @@ public class EventoUniversitario {
         return costoBase;
     }
 
-    public void asignarSala(Sala sala1){
-        System.out.println("La sala asignada es: "+ sala1);
+    public void asignarSala(Sala sala){
+        this.sala = sala;
+        System.out.println("La sala asignada al evento: "+ titulo +"es: "+ sala);
     }
 
     public void crearActividad(int id, String titulo, int cupo){
+        Actividad act = new Actividad(id, titulo, cupo);  //Es correcto hacerlo asi? como en el constructor
         System.out.println("Actividad creada. \n Id:" + id +
                 ",\n Titulo: "+titulo +
                 ",\n Cupo: " + cupo);
     }
     public void mostrarDatos(){
-        System.out.println("\n***DATOS DEL EVENTO***"+"\nId numero:" + Id + "titulo :" + titulo + "" );
+        System.out.println("\n***DATOS DEL EVENTO***"+"\nId numero:" + Id + "" +
+                "titulo :" + titulo +
+                "\n ¿Es gratuito? : " + getGratuito() +
+                "\n Cantidad de eventos creados: " + getCantidadEventos());
     }
 }

@@ -1,7 +1,11 @@
 import Clases.EventoUniversitario;
 
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
+        Scanner sc1 = new Scanner(System.in);
+        //EventoUniversitario ev4 = new Scanner(in);
 
         //Para ejercicio 1
         // (a)-Creando eventos universitarios
