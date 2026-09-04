@@ -1,9 +1,6 @@
 package Clases;
 
-<<<<<<< HEAD
 import java.time.LocalDate;
-=======
->>>>>>> a1e988410fe23de2ef3988f390c55f8c34d636d1
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,12 +20,8 @@ public class Actividad {
     //private Estudiante inscribe;
     private List<Inscripcion> inscripciones;
 
-<<<<<<< HEAD
     //cero a muchos
     private List<Estudiante> inscribe = new ArrayList<>();
-
-=======
->>>>>>> a1e988410fe23de2ef3988f390c55f8c34d636d1
 
     //Metodos
     public Inscripcion inscribir(Estudiante estudiante ) {
@@ -38,11 +31,7 @@ public class Actividad {
             return null;
         }
         //Si se crea una nueva inscripcion
-<<<<<<< HEAD
         Inscripcion inscripcion = new Inscripcion(estudiante,  LocalDate.now(), "Inscripcion Registrada", this);
-=======
-        Inscripcion inscripcion = new Inscripcion(estudiante, this);
->>>>>>> a1e988410fe23de2ef3988f390c55f8c34d636d1
         inscripciones.add(inscripcion);
 
         System.out.println("Estudiante " + estudiante.getNombre() +
@@ -52,7 +41,7 @@ public class Actividad {
     }
     public void mostrarInscripciones(){
 
-        System.out.println("Las inscripciones son: " );
+        System.out.println("Las inscripciones son: " + inscripciones);
     }
 
     //Constructor

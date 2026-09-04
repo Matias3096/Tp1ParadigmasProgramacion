@@ -1,10 +1,6 @@
 import Clases.Estudiante;
 import Clases.EventoUniversitario;
-
-<<<<<<< HEAD
 import java.util.ArrayList;
-=======
->>>>>>> a1e988410fe23de2ef3988f390c55f8c34d636d1
 import java.util.Scanner;
 
 public class App {
@@ -14,9 +10,9 @@ public class App {
 
         //Para ejercicio 1
         // (a)-Creando eventos universitarios
-        EventoUniversitario ev1 = new EventoUniversitario("Id001","choripaneada", 3000.0, false,36, "año lectivo 2026",3000);
-        EventoUniversitario ev2 = new EventoUniversitario("Id002","Lanzamiento de impresoras",0,true, 2, "Lanzamiento de impresoras primer semestre",200);
-        EventoUniversitario ev3 = new EventoUniversitario("Id003","Fulbito de la uni",1500,false, 12,"Actividad 2do semestre", 2000);
+        EventoUniversitario ev1 = new EventoUniversitario("Id001","choripaneada", 3000.0, false);
+        EventoUniversitario ev2 = new EventoUniversitario("Id002","Lanzamiento de impresoras",0,true);
+        EventoUniversitario ev3 = new EventoUniversitario("Id003","Fulbito de la uni",1500,false);
 
         // (b)-Eventos de copia
         EventoUniversitario eventoCopia1 = new EventoUniversitario(ev1);
@@ -28,8 +24,6 @@ public class App {
         ev1.mostrarDatos();
         ev2.mostrarDatos();
         ev3.mostrarDatos();
-<<<<<<< HEAD
-=======
 
         System.out.println("\nCopia de eventos");
         eventoCopia1.mostrarDatos();
@@ -38,10 +32,9 @@ public class App {
 
         //d. Se muestre el contador de eventos con la totalidad de eventos creados
         //EventoUniversitario.getCantidadEventos();
-        System.out.println("La cantidad de eventos creados es: " + EventoUniversitario.getCantidadEventos());
+        System.out.println("La cantidad de eventos creados es: " + EventoUniversitario.getCantidadEventosEu());
 
         //COnsultar si el println lo puedo dejar aca o en el get, que es lo correcto como buena practica?
->>>>>>> a1e988410fe23de2ef3988f390c55f8c34d636d1
 
         System.out.println("\nCopia de eventos");
         eventoCopia1.mostrarDatos();
@@ -50,7 +43,7 @@ public class App {
 
         //d. Se muestre el contador de eventos con la totalidad de eventos creados
         //EventoUniversitario.getCantidadEventos();
-        System.out.println("La cantidad de eventos creados es: " + EventoUniversitario.getCantidadEventos());
+        System.out.println("La cantidad de eventos creados es: " + EventoUniversitario.getCantidadEventosEu());
 
         //COnsultar si el println lo puedo dejar aca o en el get, que es lo correcto como buena practica?
 
