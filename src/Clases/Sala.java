@@ -1,20 +1,24 @@
 package Clases;
 
 public class Sala {
-    private int cupo;
     private int idSala;
+    private String nombre;
 
-    public Sala(int cupo, int id){
-        this.cupo=cupo;
-        this.idSala = id;
+    public Sala(int id, String nombre){
+        this.idSala= id;
+        this.nombre = nombre;
 
     }
 
-    public int getCupo() {
-        return cupo;
+    public int getidSala(){
+        return idSala;
+    }
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+    public String getNombre(){
+        return nombre;
     }
 
-    public void setCupo(int cupo) {
-        this.cupo = cupo;
-    }
+
 }
