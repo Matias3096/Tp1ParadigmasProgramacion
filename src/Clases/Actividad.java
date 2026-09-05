@@ -31,7 +31,7 @@ public class Actividad {
             return null;
         }
         //Si se crea una nueva inscripcion
-        Inscripcion inscripcion = new Inscripcion(estudiante,  LocalDate.now(), "Inscripcion Registrada", this);
+        Inscripcion inscripcion = new Inscripcion(estudiante, this);
         inscripciones.add(inscripcion);
 
         System.out.println("Estudiante " + estudiante.getNombre() +

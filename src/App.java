@@ -1,5 +1,5 @@
-import Clases.Estudiante;
-import Clases.EventoUniversitario;
+import Clases.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -49,8 +49,54 @@ public class App {
 
 
         System.out.println("*** EJERCICIO 2 ***");
-
+        //Creacion de lista de estudiantes inciso a
         ArrayList <Estudiante> estudianteslista = new ArrayList<>();
+
+        //creacion de estudiantes
+        Estudiante est1 = new Estudiante("Legajo1", "Matias Lulunta");
+        Estudiante est2 = new Estudiante("Legajo 2", "Santino Loos");
+
+
+        //Agregacion de estudiantes a una lista
+        estudianteslista.add(est1);
+        estudianteslista.add(est2);
+
+        //b- se construyan eventos
+        EventoUniversitario ev4 = new EventoUniversitario("Id04","Hackaton", 0.0, true);
+        EventoUniversitario ev5 = new EventoUniversitario("Id05","Charla pps",0,true);
+
+        //c. se asigne una sala a cada evento
+        Sala sala1 = new Sala(1,"Salon de usos multiples");
+        Sala sala2 = new Sala(2,"Salon de usos multiples al lado de la cancha");
+        Sala sala3 = new Sala(3, "Anfiteatro cuerpo central");
+        ev1.asignarSala(sala1);
+        ev2.asignarSala(sala2);
+        ev3.asignarSala(sala3);
+        ev4.asignarSala(sala2);
+        ev5.asignarSala(sala3);
+        ev5.asignarSala(sala1);
+
+        //d. se creen actividades propias de cada evento
+        ev1.crearActividad(1,"Actividad 1",15);
+        ev1.crearActividad(2,"Actividad 2", 20);
+        ev2.crearActividad(3,"Actividad 1 evento 2",15);
+        ev2.crearActividad(2,"Actividad 2 evento 2", 20);
+        //ev2.crearActividad(new Actividad());
+
+
+        //Si lo hago asi, la actividad queda huerfana, no esta en ningun evento universitario
+        /*
+        Actividad act1 = new Actividad(1,"Actividad 1",14 );
+        act1.inscribir(est1);
+         */
+
+
+
+        //e) se inscriban estudiantes en cada actividad
+        Inscripcion inscripcion = new Inscripcion(est1,new Actividad());
+
+
+
         
 
     }

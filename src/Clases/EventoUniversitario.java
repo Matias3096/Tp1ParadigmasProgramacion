@@ -1,6 +1,8 @@
 package Clases;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class EventoUniversitario {
@@ -68,7 +70,8 @@ public class EventoUniversitario {
     }
 
     public List<Actividad> getActividadesComposicion() {
-        return actividadesComposicion;
+
+        return Collections.unmodifiableList(actividadesComposicion);
     }
 
     public void setActividadesComposicion(List<Actividad> actividadesComposicion) {
@@ -110,6 +113,7 @@ public class EventoUniversitario {
 
     public void crearActividad(int id, String titulo, int cupo){
         Actividad act = new Actividad(id,titulo, cupo);  //Es correcto hacerlo asi? como en el constructor
+        this.actividadesComposicion.add(act);
         System.out.println("Actividad creada. \n Id:" + id +
                 ",\n Titulo: "+titulo +
                 ",\n Cupo: " + cupo);

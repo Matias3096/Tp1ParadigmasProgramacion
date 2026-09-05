@@ -14,10 +14,11 @@ public class Inscripcion {
 
 
     public Inscripcion (Estudiante estudiante, Actividad actividad){
-        this.fecha = LocalDate.now();
-        this.estado = "Confirmada"; //COmo hacemos para parametrizar?
         this.estudiante = estudiante;
         this.actividad = actividad;
+        this.fecha = LocalDate.now();
+        this.estado = "Confirmada"; //COmo hacemos para parametrizar?
+
     }
 
     public LocalDate getFecha() {
