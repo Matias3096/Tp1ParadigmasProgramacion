@@ -55,15 +55,40 @@ public class App {
         //creacion de estudiantes
         Estudiante est1 = new Estudiante("Legajo1", "Matias Lulunta");
         Estudiante est2 = new Estudiante("Legajo 2", "Santino Loos");
+        Estudiante est3 = new Estudiante("Legajo11", "Roberto Rangol");
+        Estudiante est4 = new Estudiante("Legajo 22", "Monica Moyano");
+        Estudiante est5 = new Estudiante("Legajo12", "Andina Fernandez");
+        Estudiante est6 = new Estudiante("Legajo 24", "Hugo Roberto");
+        Estudiante est7 = new Estudiante("Legajo14", "Mariela Vera");
+        Estudiante est8 = new Estudiante("Legajo 23", "Alejandro Velazquez");
+
 
 
         //Agregacion de estudiantes a una lista
         estudianteslista.add(est1);
         estudianteslista.add(est2);
+        estudianteslista.add(est3);
+        estudianteslista.add(est4);
+        estudianteslista.add(est5);
+        estudianteslista.add(est6);
+        estudianteslista.add(est7);
+        estudianteslista.add(est8);
 
         //b- se construyan eventos
         EventoUniversitario ev4 = new EventoUniversitario("Id04","Hackaton", 0.0, true);
         EventoUniversitario ev5 = new EventoUniversitario("Id05","Charla pps",0,true);
+
+        //Pero ademas, para luego recorrerlos, cree una lista de eventos, para simplificar el mostrar datos
+        ArrayList <EventoUniversitario> listaDeEventos = new ArrayList<>();
+        listaDeEventos.add(ev1);
+        listaDeEventos.add(ev2);
+        listaDeEventos.add(ev3);
+        listaDeEventos.add(ev4);
+        listaDeEventos.add(ev5);
+        listaDeEventos.add(eventoCopia1);
+        listaDeEventos.add(eventoCopia2);
+        listaDeEventos.add(eventoCopia3);
+
 
         //c. se asigne una sala a cada evento
         Sala sala1 = new Sala(1,"Salon de usos multiples");
@@ -79,8 +104,8 @@ public class App {
         //d. se creen actividades propias de cada evento
         ev1.crearActividad(1,"Actividad 1",15);
         ev1.crearActividad(2,"Actividad 2", 20);
-        ev2.crearActividad(3,"Actividad 1 evento 2",15);
-        ev2.crearActividad(2,"Actividad 2 evento 2", 20);
+        ev2.crearActividad(21,"Actividad 1 evento 2",15);
+        ev2.crearActividad(22,"Actividad 2 evento 2", 20);
         //ev2.crearActividad(new Actividad());
 
 
@@ -93,7 +118,29 @@ public class App {
 
 
         //e) se inscriban estudiantes en cada actividad
-        Inscripcion inscripcion = new Inscripcion(est1,new Actividad());
+        ev1.getActividadesComposicion().get(0).inscribir(est1);
+        ev1.getActividadesComposicion().get(1).inscribir(est2);
+        ev2.getActividadesComposicion().get(0).inscribir(est3);
+        ev2.getActividadesComposicion().get(1).inscribir(est4);
+        ev2.getActividadesComposicion().get(0).inscribir(est5);
+        ev1.getActividadesComposicion().get(1).inscribir(est6);
+        ev1.getActividadesComposicion().get(1).inscribir(est7);
+        ev1.getActividadesComposicion().get(1).inscribir(est8);
+
+
+
+
+        //f)- se muestre el resumen de datos por cada evento creado, ademas muestro la actividad
+        for (EventoUniversitario evento : listaDeEventos){
+            evento.mostrarDatos();
+            for(Actividad act : evento.getActividadesComposicion()){
+                act.mostrarInscripciones();
+            }
+        }
+
+        //g) se muestre el total de eventos creados
+        System.out.println("El total de eventos creados es: " + EventoUniversitario.getCantidadEventosEu());
+
 
 
 

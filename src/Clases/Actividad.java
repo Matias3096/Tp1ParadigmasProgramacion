@@ -34,14 +34,22 @@ public class Actividad {
         Inscripcion inscripcion = new Inscripcion(estudiante, this);
         inscripciones.add(inscripcion);
 
-        System.out.println("Estudiante " + estudiante.getNombre() +
+        System.out.println("Estudiante " + inscripcion.getEstudiante().getNombre()+
                 "Inscripto en actividad " + tituloAct);
 
         return inscripcion;
     }
     public void mostrarInscripciones(){
 
-        System.out.println("Las inscripciones son: " + inscripciones);
+        //Si quiero recorrer todas las incripciones, debo hacer un for con
+        //las inscripciones como parametro
+        for(Inscripcion ins : inscripciones){
+            System.out.println( " *** INSCRIPCION ***  " +
+                    "\n Estudiante:  " + ins.getEstudiante().getNombre() +
+                    " \nActividad: "+ins.getActividad().getTituloAct() +
+                    "\n Estado: " + ins.getEstado() +
+                     "\nFECHA:" + ins.getFecha() );
+        }
     }
 
     //Constructor
@@ -51,6 +59,15 @@ public class Actividad {
         this.cupoMaximo = cupoMaximo;
         this.inscripciones = new ArrayList<>(); //en esta linea inicializa la lista
     }
+
+
+    //Habian faltado los getters y setters
+
+    public String getTituloAct() {
+        return tituloAct;
+    }
+
+
 
     // No lo vamos a usar ahora, sino para la proxima iteracionpublic abstract double calcularCostoMateriales();
 

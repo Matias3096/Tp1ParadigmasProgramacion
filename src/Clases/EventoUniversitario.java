@@ -20,7 +20,7 @@ public class EventoUniversitario {
     }
     //Relaciones
     private List<Actividad> actividadesComposicion;
-    public Sala agrega;
+    private Sala agrega;
 
     //Constructor original
     public EventoUniversitario(String id, String titulo, double costoBase, boolean gratuito) {
@@ -108,7 +108,7 @@ public class EventoUniversitario {
 
     public void asignarSala(Sala salaAsignada){
         this.agrega = salaAsignada;
-        System.out.println("La sala asignada al evento: "+ tituloEU +"es: "+ salaAsignada);
+        System.out.println("La sala asignada al evento: "+ tituloEU +"es: "+ salaAsignada.getNombre() );
     }
 
     public void crearActividad(int id, String titulo, int cupo){
@@ -124,9 +124,11 @@ public class EventoUniversitario {
 
 
     public void mostrarDatos(){
-        System.out.println("\n***DATOS DEL EVENTO***"+"\nId numero:" + getIdEU() + "" +
+        System.out.println("\n***DATOS DEL EVENTO***"+
+                "\nId numero:" + getIdEU() + "" +
                 "titulo :" + getTituloEU() +
                 "\n ¿Es gratuito? : " + isGratuitoEU()+
-                "\n Cantidad de eventos creados: "+ getCantidadEventosEu());
+                "\n Costo: "+ calcularCostoEstimado() +
+                "\nSala asignada: " +(agrega != null ? agrega.getNombre() : "Sin sala" )+ "\n" );
     }
 }
